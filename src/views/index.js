@@ -35,74 +35,43 @@ function Game() {
 
     const checkWinner = () => {
         const { positions } = initState;
+        let winArr = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+        let circleIndexArr = [], crossIndexArr = [];
+        for (let i = 0; i < NUM; i++) {
+            if (positions[i] === CROSS) {
+                crossIndexArr.push(i);
+            }
+            if (positions[i] === CIRCLE) {
+                circleIndexArr.push(i);
+            }
+        }
+        if (crossIndexArr.length > 2 && circleIndexArr.length > 2) {
+            for (let i of winArr) {
+                const crossRes = crossIndexArr.filter(item1 => i.some(item2 => item2 === item1));
+                if (crossRes.length === 3) {
+                    alert('游戏结束，叉叉获胜！');
+                    return CROSS
+                }
+                const circleRes = circleIndexArr.filter(item1 => i.some(item2 => item2 === item1));
+                if (circleRes.length === 3) {
+                    alert('游戏结束，圆圆获胜！');
+                    return CIRCLE
+                }
+            }
+        }
         if (positions.every(p => p !== EMPTY)) {
             alert('游戏结束，平局！');
             return EMPTY;
         }
-        if(positions[0] === CROSS && positions[1] === CROSS && positions[2] === CROSS) {
-            alert('游戏结束，叉叉获胜！');
-            return CROSS
-        };
-        if(positions[3] === CROSS && positions[4] === CROSS && positions[5] === CROSS) {
-            alert('游戏结束，叉叉获胜！');
-            return CROSS
-        };
-        if(positions[6] === CROSS && positions[7] === CROSS && positions[8] === CROSS) {
-            alert('游戏结束，叉叉获胜！');
-            return CROSS
-        };
-        if(positions[0] === CROSS && positions[4] === CROSS && positions[8] === CROSS) {
-            alert('游戏结束，叉叉获胜！');
-            return CROSS
-        };
-        if(positions[2] === CROSS && positions[4] === CROSS && positions[6] === CROSS) {
-            alert('游戏结束，叉叉获胜！');
-            return CROSS
-        };
-        if(positions[0] === CROSS && positions[3] === CROSS && positions[6] === CROSS) {
-            alert('游戏结束，叉叉获胜！');
-            return CROSS
-        };
-        if(positions[1] === CROSS && positions[4] === CROSS && positions[7] === CROSS) {
-            alert('游戏结束，叉叉获胜！');
-            return CROSS
-        };
-        if(positions[2] === CROSS && positions[5] === CROSS && positions[8] === CROSS) {
-            alert('游戏结束，叉叉获胜！');
-            return CROSS
-        };
-        if(positions[0] === CIRCLE && positions[1] === CIRCLE && positions[2] === CIRCLE) {
-            alert('游戏结束，圆圆获胜！');
-            return CIRCLE
-        };
-        if(positions[3] === CIRCLE && positions[4] === CIRCLE && positions[5] === CIRCLE) {
-            alert('游戏结束，圆圆获胜！');
-            return CIRCLE
-        };
-        if(positions[6] === CIRCLE && positions[7] === CIRCLE && positions[8] === CIRCLE) {
-            alert('游戏结束，圆圆获胜！');
-            return CIRCLE
-        };
-        if(positions[0] === CIRCLE && positions[4] === CIRCLE && positions[8] === CIRCLE) {
-            alert('游戏结束，圆圆获胜！');
-            return CIRCLE
-        };
-        if(positions[2] === CIRCLE && positions[4] === CIRCLE && positions[6] === CIRCLE) {
-            alert('游戏结束，圆圆获胜！');
-            return CIRCLE
-        };
-        if(positions[0] === CIRCLE && positions[3] === CIRCLE && positions[6] === CIRCLE) {
-            alert('游戏结束，圆圆获胜！');
-            return CIRCLE
-        };
-        if(positions[1] === CIRCLE && positions[4] === CIRCLE && positions[7] === CIRCLE) {
-            alert('游戏结束，圆圆获胜！');
-            return CIRCLE
-        };
-        if(positions[2] === CIRCLE && positions[5] === CIRCLE && positions[8] === CIRCLE) {
-            alert('游戏结束，圆圆获胜！');
-            return CIRCLE
-        };
         return null;
     };
 

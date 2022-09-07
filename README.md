@@ -1,9 +1,11 @@
 ## Use Guide
 
-### npm install
+### 1、npm install
 
-### npm start
+### 2、npm start
 
-### then enjoy the game
+### 3、then enjoy the game
 
-github地址：https://github.com/blueskymq/TicTacToeGame/tree/master
+####  github地址：https://github.com/blueskymq/TicTacToeGame/tree/master
+
+#### todo： 1、增加先手的选择 2、支持以残局开始 3、AI训练

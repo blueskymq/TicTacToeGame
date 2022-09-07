@@ -29,3 +29,7 @@
     font-size: 60px;
     color: blue;
 }
+
+button {
+    margin: 30px 20px 0 0;
+}

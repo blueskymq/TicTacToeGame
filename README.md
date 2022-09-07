@@ -1,7 +1,9 @@
 ## Use Guide
 
-### `npm install`
+### npm install
 
-### `npm start`
+### npm start
 
-### `then enjoy the game`
+### then enjoy the game
+
+github地址：https://github.com/blueskymq/TicTacToeGame/tree/master

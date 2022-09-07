@@ -1,0 +1,31 @@
+.game {
+    width: 370px;
+    height: 370px;
+    background-color: lightgray;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    column-gap: 6px;
+    row-gap: 6px;
+}
+
+.grid {
+    width: 120px;
+    height: 120px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border: 2px solid red;
+    border-radius: 50%;
+}
+
+.cross {
+    font-size: 60px;
+    color: blue;
+}

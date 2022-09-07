@@ -13,6 +13,7 @@ node_modules/
 *.module.scss.d.ts
 \.DS_Store
 .kio
+.history
 
 bundleMap.json
 src/_remote_base/
